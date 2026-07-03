@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABSE Analytics Portal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <nav class="topbar glass-card">
+        <div class="brand">
+          <div class="brand-mark">ABSE</div>
+          <div>
+            <h1>ABSE Analytics Portal</h1>
+            <p>Class 10 Board Result Insights</p>
+          </div>
+        </div>
+        <div id="currentDate" class="date-pill">Loading date...</div>
+      </nav>
+
+      <div id="loader" class="loader-card glass-card">
+        <div class="loader-ring"></div>
+        <p>Loading Student Data...</p>
+      </div>
+
+      <div id="error-state" class="error-card glass-card hidden">
+        <h3>Unable to load student data.</h3>
+        <p>The requested CSV file could not be loaded.</p>
+      </div>
+
+      <main id="dashboard-content" class="dashboard-shell hidden">
+        <section class="summary-grid">
+          <article class="summary-card glass-card">
+            <p class="summary-label">Total Students</p>
+            <h2 id="totalStudents">0</h2>
+            <span class="summary-trend">Registered candidates</span>
+          </article>
+          <article class="summary-card glass-card">
+            <p class="summary-label">Average Percentage</p>
+            <h2 id="averagePercentage">0%</h2>
+            <span class="summary-trend">Across all subjects</span>
+          </article>
+          <article class="summary-card glass-card">
+            <p class="summary-label">Topper Percentage</p>
+            <h2 id="topperPercentage">0%</h2>
+            <span class="summary-trend">Highest scoring student</span>
+          </article>
+          <article class="summary-card glass-card">
+            <p class="summary-label">Pass Percentage</p>
+            <h2 id="passPercentage">0%</h2>
+            <span class="summary-trend">Students clearing all subjects</span>
+          </article>
+        </section>
+
+        <section class="chart-grid">
+          <article class="chart-card glass-card">
+            <h3>Subject Wise Average Marks</h3>
+            <canvas id="subjectsChart"></canvas>
+          </article>
+
+          <article class="chart-card glass-card">
+            <h3>Pass vs Fail</h3>
+            <canvas id="passChart"></canvas>
+          </article>
+
+          <article class="chart-card glass-card">
+            <h3>Top 10 Students</h3>
+            <canvas id="topStudentsChart"></canvas>
+          </article>
+
+          <article class="chart-card glass-card">
+            <h3>Marks Distribution</h3>
+            <canvas id="distributionChart"></canvas>
+          </article>
+
+          <article class="chart-card glass-card">
+            <h3>Subject Difficulty Analysis</h3>
+            <canvas id="difficultyChart"></canvas>
+          </article>
+
+          <article class="chart-card glass-card">
+            <h3>Highest Marks In Every Subject</h3>
+            <canvas id="highestMarksChart"></canvas>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer glass-card">
+        <p>ABSE Analytics Portal</p>
+        <span>Built using HTML, CSS, JavaScript and Chart.js</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
